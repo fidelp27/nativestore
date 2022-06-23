@@ -37,7 +37,7 @@ const ProductList = ({ product }) => {
       <View>
         <TouchableOpacity onpress={() => console.log("added")}>
           <Text>
-            <AntDesign name="pluscircleo" size={20} color="black" />
+            <AntDesign name="pluscircleo" size={19} color="black" />
           </Text>
         </TouchableOpacity>
       </View>
