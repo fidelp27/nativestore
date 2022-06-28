@@ -1,6 +1,6 @@
 import React from "react";
-import { View, FlatList } from "react-native";
-import ProductList from "../products/productsList";
+import { View, FlatList, SafeAreaView } from "react-native";
+import ProductList from "../components/products/productsList";
 
 const Store = () => {
   const PRODUCT_LIST = [
@@ -31,6 +31,30 @@ const Store = () => {
     {
       id: 5,
       name: "Producto 5",
+      description: "lorem ipsum dolor sit amet, consectetur adip",
+      cover: "https://picsum.photos/200/300",
+    },
+    {
+      id: 6,
+      name: "Producto 6",
+      description: "lorem ipsum dolor sit amet, consectetur adip",
+      cover: "https://picsum.photos/200/300",
+    },
+    {
+      id: 7,
+      name: "Producto 7",
+      description: "lorem ipsum dolor sit amet, consectetur adip",
+      cover: "https://picsum.photos/200/300",
+    },
+    {
+      id: 8,
+      name: "Producto 8",
+      description: "lorem ipsum dolor sit amet, consectetur adip",
+      cover: "https://picsum.photos/200/300",
+    },
+    {
+      id: 9,
+      name: "Producto 9",
       description: "lorem ipsum dolor sit amet, consectetur adip",
       cover: "https://picsum.photos/200/300",
     },
