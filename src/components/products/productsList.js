@@ -7,14 +7,16 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 
-const ProductList = ({ product }) => {
+const ProductList = ({ product, onSelected }) => {
   const styles = StyleSheet.create({
     containerCard: {
       flexDirection: "row",
       width: "90%",
       marginVertical: 15,
+    },
+    styleTouchable: {
+      flex: 1,
     },
     containerInfo: {
       flexDirection: "column",
@@ -37,18 +39,16 @@ const ProductList = ({ product }) => {
   return (
     <SafeAreaView>
       <View style={styles.containerCard}>
-        <Image source={{ uri: product.cover }} style={styles.image} />
-        <View style={styles.containerInfo}>
-          <Text>{product.name}</Text>
-          <Text>{product.description} </Text>
-        </View>
-        <View>
-          <TouchableOpacity>
-            <Text onpress={() => console.log("added")}>
-              <AntDesign name="pluscircleo" size={19} color="black" />
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          onPress={() => onSelected(product)}
+          style={styles.styleTouchable}
+        >
+          <Image source={{ uri: product.cover }} style={styles.image} />
+          <View style={styles.containerInfo}>
+            <Text>{product.name}</Text>
+            <Text>{product.description} </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

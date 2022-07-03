@@ -1,17 +1,23 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Store from "../views/store";
+import StoreShop from "../views/storeShop";
 import ProductDetail from "../components/products/productDetail";
 import Home from "../views/home";
+import { Platform } from "react-native";
 
 const ShopNavigator = () => {
   const Stack = createNativeStackNavigator();
+  const isIos = Platform === "ios";
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Store" component={Store} />
-      <Stack.Screen name="productDetail" component={ProductDetail} />
+      <Stack.Screen name="Store" component={StoreShop} />
+      <Stack.Screen
+        name="productDetail"
+        component={ProductDetail}
+        options={({ route }) => ({ title: route.params.name })}
+      />
     </Stack.Navigator>
   );
 };
